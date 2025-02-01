@@ -1,0 +1,132 @@
+# 🚀 前端框架介绍
+
+## 1. 什么是前端框架？
+**前端框架**（Frontend Framework）是一组 **预定义的工具、库和标准**，用于 **简化 Web 应用的开发**。它们提供了 **组件化开发**、**状态管理**、**数据绑定** 和 **路由管理** 等功能，使开发者能更高效地构建交互式用户界面（UI）。
+
+### 🔹 **前端框架的主要特点**
+- **组件化开发**：把 UI 结构拆分成独立的可复用组件（如按钮、表单、导航栏）。
+- **数据绑定**：自动同步 UI 和数据（单向/双向绑定）。
+- **虚拟 DOM**：提升渲染性能，减少对真实 DOM 的操作。
+- **路由管理**：支持单页应用（SPA）中的页面导航。
+- **状态管理**：管理应用数据（如 Vuex、Redux、Pinia）。
+- **生态系统**：提供 UI 组件库、后端 API 交互工具、测试框架等。
+
+---
+
+## 2. 常见前端框架
+
+| 框架名称 | 开发者 | 主要特点 | 适用场景 |
+|---------|--------|---------|---------|
+| **React** | Meta（Facebook） | 组件化、虚拟 DOM、单向数据流 | 大型 Web 应用 |
+| **Vue** | 尤雨溪（Evan You） | 双向数据绑定、渐进式、易上手 | 小型/中型项目 |
+| **Angular** | Google | 全面 MVVM 框架、依赖注入 | 企业级应用 |
+| **Svelte** | Rich Harris | 编译时框架、无虚拟 DOM | 轻量级应用 |
+| **SolidJS** | Ryan Carniato | 高效响应式、编译优化 | 高性能 Web 应用 |
+
+---
+
+## 3. React.js 简介
+### 🔹 **什么是 React？**
+- **React.js** 是由 **Meta（Facebook）** 开发的 **前端 JavaScript 库**，用于构建用户界面。
+- 适用于 **单页应用（SPA）** 和 **移动端（React Native）**。
+- 采用 **组件化开发**，提高代码复用性和维护性。
+
+### 🔹 **React 的特点**
+✅ **组件化开发（Component-Based）**：UI 拆分成独立组件，提高可复用性。  
+✅ **虚拟 DOM（Virtual DOM）**：减少对真实 DOM 的操作，提高渲染性能。  
+✅ **单向数据流（One-way Data Binding）**：便于状态管理和调试。  
+✅ **支持 Hooks（useState, useEffect）**：让函数式组件拥有状态管理能力。  
+✅ **生态系统丰富**：支持 `React Router`（路由）、`Redux`（状态管理）等。
+
+### 🔹 **React 示例代码**
+```jsx
+import React, { useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>计数器：{count}</h1>
+      <button onClick={() => setCount(count + 1)}>增加</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+## 4. Vue.js 简介
+
+### 🔹 **什么是 Vue？**
+- **Vue.js** 由 **尤雨溪（Evan You）** 开发，是一个 **渐进式 JavaScript 框架**，用于构建 UI 界面。
+- 适用于 **单页应用（SPA）** 和 **小型项目**，学习成本低，易于上手。
+- 语法更接近 HTML 和 JavaScript，适合初学者。
+
+### 🔹 **Vue 的特点**
+✅ **双向数据绑定（Two-way Data Binding）**：`v-model` 实现视图与数据自动同步。  
+✅ **指令系统（Directives）**：`v-for`（循环）、`v-if`（条件渲染）等，简化操作。  
+✅ **组件化开发（Component-Based）**：支持 `.vue` 单文件组件，提高代码复用性。  
+✅ **Vue 生态完整**：提供 `Vue Router`（路由）、`Vuex / Pinia`（状态管理）、`Vite`（构建工具）等。  
+
+### 🔹 **Vue 示例代码**
+```vue
+<template>
+  <div>
+    <h1>计数器：{{ count }}</h1>
+    <button @click="count++">增加</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      count: 0
+    };
+  }
+};
+</script>
+```
+
+---
+
+## 5. React vs Vue 对比
+
+| 特性  | **React**  | **Vue**  |
+|---------|------------|------------|
+| **开发者** | Meta（Facebook） | 尤雨溪（Evan You） |
+| **数据绑定** | 单向数据流（One-way Binding） | 双向数据绑定（Two-way Binding） |
+| **DOM 更新** | 虚拟 DOM（Virtual DOM） | 虚拟 DOM + 响应式系统 |
+| **组件语法** | JSX（JavaScript + XML） | `.vue` 单文件组件（HTML、CSS、JS 分离） |
+| **状态管理** | `useState`（Hooks）、Redux、Context API | Vuex、Pinia |
+| **学习曲线** | 相对较高，需要掌握 JSX 和 Hooks | 语法更接近 HTML/JS，较易上手 |
+| **适用场景** | 适合大型项目、企业级应用 | 适合中小型项目、渐进式增强 |
+| **性能** | 高效，适合大型复杂应用 | 响应式数据更轻量，适合小型项目 |
+
+---
+
+## 6. 选择 React 还是 Vue？
+选择 **React** 还是 **Vue** 取决于团队需求、项目规模和个人偏好：
+- **如果你想进入大厂（Meta、字节跳动、腾讯）** → React 更主流
+- **如果你想开发小型项目或国内业务（小红书、B 站）** → Vue 更友好
+- **如果团队已有技术栈** → 选已有的框架，减少维护成本
+
+---
+
+## 7. 总结
+- **React 和 Vue 都是流行的前端框架**，适用于不同类型的项目。
+- **React 适用于大型、复杂 Web 应用**，具有更大的社区支持和企业级应用场景。
+- **Vue 更适合快速开发**，适合中小型项目，学习成本低，上手更快。
+- **两者都值得学习**，掌握其中之一后，学习另一个也会更容易。
+
+---
+
+## 8. 参考文献
+- [React 官网](https://react.dev/)
+- [Vue 官网](https://vuejs.org/)
+- [React vs Vue 深度对比](https://www.educative.io/blog/react-vs-vue)
+
+🚀 **无论你选择 React 还是 Vue，都可以构建强大且高效的 Web 应用！**
